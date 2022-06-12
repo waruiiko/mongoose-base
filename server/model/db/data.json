@@ -1,0 +1,68 @@
+    {
+        "aid": 469823619,
+        "videos": 1,
+        "tid": 228,
+        "tname": "人文历史",
+        "copyright": 1,
+        "pic": "http://i0.hdslb.com/bfs/archive/b2562668ea8b265080cb1662d13a3e648976d40c.jpg",
+        "title": "你们那好好说中文判几年",
+        "pubdate": 1654574400,
+        "ctime": 1654574430,
+        "desc": "",
+        "state": 0,
+        "duration": 363,
+        "mission_id": 668487,
+        "rights": {
+            "bp": 0,
+            "elec": 0,
+            "download": 0,
+            "movie": 0,
+            "pay": 0,
+            "hd5": 0,
+            "no_reprint": 1,
+            "autoplay": 1,
+            "ugc_pay": 0,
+            "is_cooperation": 0,
+            "ugc_pay_preview": 0,
+            "no_background": 0,
+            "arc_pay": 0,
+            "pay_free_watch": 0
+        },
+        "owner": {
+            "mid": 662609045,
+            "name": "云社_",
+            "face": "http://i2.hdslb.com/bfs/face/b291b3813ce42ddfd3bb010ad5da8b4ab4a2bfe6.jpg"
+        },
+        "stat": {
+            "aid": 469823619,
+            "view": 2425074,
+            "danmaku": 8837,
+            "reply": 8617,
+            "favorite": 61950,
+            "coin": 152347,
+            "share": 28042,
+            "now_rank": 0,
+            "his_rank": 3,
+            "like": 229905,
+            "dislike": 0
+        },
+        "dynamic": "",
+        "cid": 740498636,
+        "dimension": {
+            "width": 1920,
+            "height": 1080,
+            "rotate": 0
+        },
+        "season_id": 372078,
+        "short_link": "https://b23.tv/BV1CT411V79S",
+        "short_link_v2": "https://b23.tv/BV1CT411V79S",
+        "first_frame": "http://i1.hdslb.com/bfs/storyff/n220607a2q3vnpuuoe2hl1hben5pivxz_firsti.jpg",
+        "bvid": "BV1CT411V79S",
+        "season_type": 0,
+        "is_ogv": false,
+        "ogv_info": null,
+        "rcmd_reason": {
+            "content": "百万播放",
+            "corner_mark": 0
+        }
+    }
