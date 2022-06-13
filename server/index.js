@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const router = express.Router()
+// const router = express.Router()
 
 const cors = require('cors')
 app.use(cors())
@@ -13,7 +13,7 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb://localhost:27017/bilihot');
 }
-
+//model
 const HotSpot = require('./model/HotSpot');
 
 app.get('/', (req, res) => {
@@ -51,7 +51,7 @@ app.listen(port, () => {
 })
 
 // router.post('/ca', async (req, res) => {
-//   const model = await HotSpot.create(req.body)
+//   const model = await HotSpot.create({ aid: 123, title: 'hello create!!' })
 //   res.send(model)
 // })
 
