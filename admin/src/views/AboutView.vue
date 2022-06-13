@@ -13,7 +13,7 @@
 
 <script>
 // import axios from 'axios'
-const axios = require('axios')
+// const axios = require('axios')
 export default {
   data() {
     return {
@@ -26,9 +26,10 @@ export default {
     console.log("mounted")
     // const axios = require('axios')
     // 向给定ID的用户发起请求
-    axios.get('http://localhost:3000/find')
+    this.$http.get('/')
       .then(function (response) {
         // 处理成功情况
+        console.log('gg')
         console.log(response.data);
       })
       .catch(function (error) {
