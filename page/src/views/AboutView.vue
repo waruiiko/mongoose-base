@@ -26,19 +26,19 @@ export default {
     console.log("mounted")
     // const axios = require('axios')
     // 向给定ID的用户发起请求
-    // this.$http.get('/')
-    //   .then(function (response) {
-    //     // 处理成功情况
-    //     console.log('gg')
-    //     console.log(response.data);
-    //   })
-    //   .catch(function (error) {
-    //     // 处理错误情况
-    //     console.log(error);
-    //   })
-    //   .then(function () {
-    //     // 总是会执行
-    //   });
+    this.$http.get('http://127.0.0.1:3000/get')
+      .then(function (response) {
+        // 处理成功情况
+        console.log('gg')
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // 处理错误情况
+        console.log(error);
+      })
+      .then(function () {
+        // 总是会执行
+      });
   },
   methods: {
     async save() {
