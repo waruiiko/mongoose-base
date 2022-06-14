@@ -4,8 +4,15 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import http from './http'
+// import http from './http'
 const app = createApp(App);
-app.$http=http;
+
+let http =()=>{
+    console.log('http://127.0.0.1:3000')
+}
+// const http = axios.create({
+//     baseURL: 'http://127.0.0.1:3000',
+// });
+app.config.globalProperties.$http=http;
 // app.config.globalProperties.$http=http;
-createApp(App).use(store).use(router).use(VueAxios,axios).mount('#app')
+app.use(store).use(router).use(VueAxios,axios).mount('#app')
