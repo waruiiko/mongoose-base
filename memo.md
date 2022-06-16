@@ -26,21 +26,20 @@ export default http
 ## Step 2
 main.js中
 ```javascript
-import http from './http'
+import http from './http'   //引入插件
 app.config.globalProperties.$filter = {
-    foo() {
+    //此处app.config.globalProperties注册全局变量，这里与vue2中不同，无法使用$http,因此使用$filter或者其他未在全局注册的单词
+    foo() { //创建一个函数，直接返回插件
           return http
-        // return axios.create({
-        //     baseURL: 'http://127.0.0.1:3000',
-        // });
     },
     bar() {
-        const baseURL= 'http://127.0.0.1:3000'
-        return baseURL
+        console.log("我是bar")
+        return "我是bar"
     }
 }
 ```
-## Step 2
-## Step 2
-## Step 2
-## Step 2
+## Step 3
+
+## Step 4
+## Step 5
+## Step 6
