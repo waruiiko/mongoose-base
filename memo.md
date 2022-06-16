@@ -39,7 +39,36 @@ app.config.globalProperties.$filter = {
 }
 ```
 ## Step 3
-
+vue组件中
+```javascript
+import { getCurrentInstance,onMounted} from 'vue'
+export default {
+  setup() {
+        onMounted(() => {
+            //获得实例
+          const internalInstance = getCurrentInstance() 
+            //proxy为main.js中注册的变量
+          const proxy = internalInstance?.appContext.config.globalProperties
+            //proxy?.$filter.foo()=http
+            //http是插件导出的、由axios.create创建出来的实例
+            //发起get请求
+          proxy?.$filter.foo().get('/get')
+          .then(function (response) {
+            // 处理成功情况
+            console.log('gg')
+            console.log(response);
+          })
+          .catch(function (error) {
+            // 处理错误情况
+            console.log(error);
+          })
+          .then(function () {
+            // 总是会执行
+          });
+    });
+  },
+}
+```
 ## Step 4
 ## Step 5
 ## Step 6
