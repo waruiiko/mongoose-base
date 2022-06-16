@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from 'vue'
 // import axios from 'axios'
 // const axios = require('axios')
 export default {
@@ -24,7 +25,8 @@ export default {
 
   mounted() {
     console.log("mounted")
-    console.log(this.$http)
+    const {proxy} = getCurrentInstance();
+    console.log(proxy.$http)
     // const axios = require('axios')
     // 向给定ID的用户发起请求
     // this.$http.get('/get')
