@@ -70,5 +70,12 @@ export default {
 }
 ```
 ## Step 4
-## Step 5
-## Step 6
+在后端server中，有4个关键的文件
+1.'./index.js'
+    入口文件，创建监听端口、跨域引用、插件引用等
+2.'./routes/admin/index.js'
+    创建路由
+3.'./plugins/db.js'
+    连接数据库
+4.'./model/HotSpot.js'
+    创建模型（Schema）
