@@ -14,8 +14,6 @@
 
 <script>
 import { getCurrentInstance,onMounted} from 'vue'
-// import axios from 'axios'
-// const axios = require('axios')
 export default {
   data() {
     return {
@@ -24,14 +22,7 @@ export default {
     }
   },
   setup() {
-    // 有效  全局
-    // const internalInstance = getCurrentInstance() 
-    // const globalProperties = internalInstance?.appContext.config.globalProperties
-    // console.log(globalProperties?.$filter.bar())
-        // const { ctx } = getCurrentInstance();
         onMounted(() => {
-          // ctx.$http.get('/get').then().catch(err => {console.log(err)})
-          // console.log(ctx._.appContext.config.globalProperties, "ctx");
           const internalInstance = getCurrentInstance() 
           const proxy = internalInstance?.appContext.config.globalProperties
           // console.log(proxy?.$filter.bar())
