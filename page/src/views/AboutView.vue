@@ -26,11 +26,10 @@ export default {
           const internalInstance = getCurrentInstance() 
           const proxy = internalInstance?.appContext.config.globalProperties
           // console.log(proxy?.$filter.bar())
-          console.log(proxy?.$filter)
+          // console.log(proxy?.$filter)
           proxy?.$filter.foo().get('/get')
           .then(function (response) {
             // 处理成功情况
-            console.log('gg')
             console.log(response);
           })
           .catch(function (error) {
@@ -44,7 +43,7 @@ export default {
   },
 
   mounted() {
-    console.log("mounted")
+    // console.log("mounted")
 
     // const axios = require('axios')
     // 向给定ID的用户发起请求
