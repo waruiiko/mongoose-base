@@ -2,7 +2,7 @@ module.exports = app => {
     const express = require('express');
     const router = express.Router();
     // const HotSpot = require('../../model/HotSpot')
-    // router.post('/ca', async (req, res) =>{
+    // router.post('/create', async (req, res) =>{
     //     const model = await HotSpot.create(req.body)
     //     res.send(model)
     // })
@@ -17,5 +17,14 @@ module.exports = app => {
             data: query
         })
     })
+    //add
+    app.get('/create', async (req, res) => {
+        const query = req.query
+        res.send({
+            status: 200,
+            msg: 'get',
+            data: query
+        })
+      });
     app.use('/', router)
 }

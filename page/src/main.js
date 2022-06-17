@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -32,4 +34,4 @@ app.config.globalProperties.$filter = {
     }
 }
 
-app.use(store).use(router).use(VueAxios, axios).mount('#app')
+app.use(store).use(router).use(ElementPlus, { size: 'small', zIndex: 3000 }).use(VueAxios, axios).mount('#app')
