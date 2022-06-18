@@ -6,7 +6,7 @@ module.exports = app => {
     //     const model = await HotSpot.create(req.body)
     //     res.send(model)
     // })
-    router.get('/', async (req, res) => {
+    router.get('/api', async (req, res) => {
         res.send('Hello World!')
     })
     router.get('/api/get', async (req, res) => {

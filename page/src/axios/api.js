@@ -5,7 +5,7 @@ const api = {
         return axios.get(`/create`, {params: params})
     },
     get(params) {
-        return axios.get(`/get`, {params: params})
+        return axios.get(`/`, {params: params})
     },
     // post方法
     getLogin(params) {
