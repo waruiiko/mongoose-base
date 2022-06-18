@@ -60,10 +60,10 @@ export default {
   },
 
   mounted() {
-    this.getProxy().$ssd.get().then(function (response) {
-      const myrssd= response.data
-      return myrssd
-    })
+    // this.getProxy().$ssd.get().then(function (response) {
+    //   const myrssd= response.data
+    //   return myrssd
+    // })
     // console.log(
     //   this.getProxy().$ssd.create()
     //     .then(function (response) {

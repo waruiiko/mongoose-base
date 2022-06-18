@@ -256,6 +256,28 @@ export function apiGetUserInfo(param: UserInfoParam) {
     })
 }
 ```
+
+接着在具体业务页面里使用这个请求，例如：
+```javascript
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { apiGetUserInfo } from '@/apis/user'
+function getUserInfo() {
+	const param = {
+		userID: '10001',
+		userName: 'Mike',
+	}
+	apiGetUserInfo(param).then((res) => {
+		console.log(res)
+	})
+}
+onMounted(() => {
+	getUserInfo()
+})
+</script>
+
+```
+
 3.全局引入axios
 main.js中
 ```javascript
