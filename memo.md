@@ -90,6 +90,7 @@ export default {
 3，在axios文件下创建baseURL.js文件用于管理接口域名、创建api.js用于配置每个接口
 
 4，在baseURL.js文件里面配置我们的域名：
+
 ```javascript
 import axios from 'axios'
 
@@ -100,7 +101,9 @@ const service = axios.create({
 
 export default service;
 ```
+
 5，在api.js文件里面配置我们的每一个接口：
+
 ```javascript
 import axios from './baseURL' // 引入刚刚创建的域名文件
 const base = '/api';// 解决跨域问题
@@ -158,6 +161,7 @@ Vue.prototype.$api = api  // 将api文件挂载到vue实例上，这样就可以
 ```
 
 7.2在需要使用的组件里：
+
 ```javascript
 
 methods:{
@@ -169,7 +173,10 @@ methods:{
                 .catch(err=>{ //报错的操作});
 
 }
+
+```
 ————————————————
 版权声明：本文为CSDN博主「向小江」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/qq_43680785/article/details/123873017
-```
+
+-----------

@@ -6,9 +6,9 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-// import http from './http'
+import api from './axios/api'
 const app = createApp(App);
-
+app.config.globalProperties.$ssd = api
 // let http =()=>{
 //     console.log('http://127.0.0.1:3000')
 //     return 'success';

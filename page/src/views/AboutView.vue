@@ -17,8 +17,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import instance from '../http'
+import { ref, getCurrentInstance } from 'vue'
 export default {
   data() {
     return {
@@ -59,9 +58,13 @@ export default {
   },
 
   mounted() {
-    // console.log("mounted")
-    // console.log()
-    console.log(this.getProxy())
+    console.log(
+      this.getProxy().$ssd.create()
+        .then(function (response) {
+          // 处理成功情况
+          console.log(response);
+        })
+    )
     // const axios = require('axios')
     // 向给定ID的用户发起请求
     // this.$http.get('/get')
@@ -80,14 +83,19 @@ export default {
   },
   methods: {
     getProxy() {
-      console.log(instance)
-      // const internalInstance = getCurrentInstance()
-      // const proxy = internalInstance?.appContext.config.globalProperties
+      // console.log(instance)
+      const internalInstance = getCurrentInstance()
+      const proxy = internalInstance?.appContext.config.globalProperties
       // // return console.log(proxy?.$filter.bar())
-      // return proxy
+      return proxy
     },
     save() {
-      console.log(this.getProxy())
+      console.log(this.getProxy().$ssd.create()
+        .then(function (response) {
+          // 处理成功情况
+          console.log(response);
+        })
+      )
       // const internalInstance = getCurrentInstance()
       // const proxy = internalInstance?.appContext.config.globalProperties
       // // console.log(proxy?.$filter)

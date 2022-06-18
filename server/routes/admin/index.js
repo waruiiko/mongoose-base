@@ -9,7 +9,7 @@ module.exports = app => {
     router.get('/', async (req, res) => {
         res.send('Hello World!')
     })
-    router.get('/get', async (req, res) => {
+    router.get('/api/get', async (req, res) => {
         const query = req.query
         res.send({
             status: 200,
@@ -18,7 +18,7 @@ module.exports = app => {
         })
     })
     //add
-    app.get('/create', async (req, res) => {
+    router.get('/api/create', async (req, res) => {
         const query = req.query
         res.send({
             status: 200,
