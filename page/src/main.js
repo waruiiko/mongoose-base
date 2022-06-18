@@ -6,7 +6,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import http from './http'
+// import http from './http'
 const app = createApp(App);
 
 // let http =()=>{
@@ -21,17 +21,17 @@ const app = createApp(App);
 // }
 // app.config.globalProperties.$http=http;
 // app.config.globalProperties.$http=http;
-app.config.globalProperties.$filter = {
-    foo() {
-          return http
-        // return axios.create({
-        //     baseURL: 'http://127.0.0.1:3000',
-        // });
-    },
-    bar() {
-        const baseURL= 'http://127.0.0.1:3000'
-        return baseURL
-    }
-}
+// app.config.globalProperties.$filter = {
+//     foo() {
+//           return http
+//         // return axios.create({
+//         //     baseURL: 'http://127.0.0.1:3000',
+//         // });
+//     },
+//     bar() {
+//         const baseURL= 'http://127.0.0.1:3000'
+//         return baseURL
+//     }
+// }
 
 app.use(store).use(router).use(ElementPlus, { size: 'small', zIndex: 3000 }).use(VueAxios, axios).mount('#app')
