@@ -1,7 +1,7 @@
-import axios from "axios";
+// import axios from "axios";
 
-const http = axios.create({
-    baseURL: 'http://127.0.0.1:3000',
-});
-
-export default http
+// const instance = axios.create({
+//     baseURL: 'http://127.0.0.1:3000',
+// });
+const instance = console.log('fine');
+export default instance
