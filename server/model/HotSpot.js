@@ -5,7 +5,7 @@ const {Schema} = mongoose;
 const hotSpotSchema = new Schema({
     aid:{
         type:Number,
-        required:true,
+        required:false,
     },
     videos:{
         type:Number,

@@ -6,10 +6,10 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import service from './axios/baseURL'
-// import api from './axios/api'
+// import service from './axios/baseURL'
+import api from './axios/api'
 const app = createApp(App);
-// app.config.globalProperties.$ssd = api
+app.config.globalProperties.$api = api
 // let http =()=>{
 //     console.log('http://127.0.0.1:3000')
 //     return 'success';
@@ -24,7 +24,7 @@ const app = createApp(App);
 // app.config.globalProperties.$http=http;
 app.config.globalProperties.$filter = {
     foo() {
-          return service
+          return 'nano'
         // return axios.create({
         //     baseURL: 'http://127.0.0.1:3000',
         // });

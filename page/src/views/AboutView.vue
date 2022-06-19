@@ -6,13 +6,16 @@
         {{ name }}
         <!-- {{ $filter.foo() }} -->aid:
         <input type="text" v-model="this.aid" />
+        {{ aid }}
       </div>
       <div>
         title:
         <input type="text" v-model="this.title" />
+        {{ title }}
       </div>
       <button type="submit" class="btn btn-primary" @click.prevent="save">Save</button>
       <button type="submit" class="btn btn-primary" @click.prevent="getProxy">getProxy</button>
+      <button type="submit" class="btn btn-primary" @click.prevent="getAPI">getAPI</button>
     </div>
   </div>
 </template>
@@ -69,7 +72,7 @@ export default {
       age.value++ //想改变值或获取值 必须.value
     }
     return { //必须返回 模板中才能使用
-      name, age, plusOne,save,getProxy
+      name, age, plusOne, save, getProxy
     }
 
   },
@@ -103,6 +106,25 @@ export default {
     //   });
   },
   methods: {
+    getAPI() {
+      let data = {
+        'title':this.title
+      }
+      this.$api.create('/create', data)
+        .then(function (response) {
+          // 处理成功情况
+          console.log(response);
+        })
+        .catch(function (error) {
+          // 处理错误情况
+          console.log(error);
+        })
+        .then(function () {
+          // 总是会执行
+        });
+      // console.log(this.$api);
+      // console.log(this.$filter);
+    }
     // getProxy() {
 
     //   const globalProperties = useGetGlobalProperties()
