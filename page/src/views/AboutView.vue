@@ -12,49 +12,64 @@
         <input type="text" v-model="this.title" />
       </div>
       <button type="submit" class="btn btn-primary" @click.prevent="save">Save</button>
+      <button type="submit" class="btn btn-primary" @click.prevent="getProxy">getProxy</button>
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import useGetGlobalProperties from '../hooks/useGlobal'
+import { ref, getCurrentInstance, onMounted } from 'vue'
+// import useGetGlobalProperties from '../hooks/useGlobal'
 export default {
   data() {
     return {
       aid: '',
       title: '',
-      ssd:'gg'
+      ssd: 'gg'
       // name:'xiaoming'
     }
   },
   setup() {
-    // onMounted(() => {
-    //   const internalInstance = getCurrentInstance()
-    //   const proxy = internalInstance?.appContext.config.globalProperties
-    //   console.log(proxy?.$filter.bar())
-    //   // console.log(proxy?.$filter)
-    //   // proxy?.$filter.foo().get('/get')
-    //   //   .then(function (response) {
-    //   //     // 处理成功情况
-    //   //     console.log(response);
-    //   //   })
-    //   //   .catch(function (error) {
-    //   //     // 处理错误情况
-    //   //     console.log(error);
-    //   //   })
-    //   //   .then(function () {
-    //   //     // 总是会执行
-        // });
+    function getProxy() {
+      const internalInstance = getCurrentInstance()
+      const proxy = internalInstance?.appContext.config.globalProperties
+      return console.log(proxy)
+    }
 
-    // });
+
+    function save() {
+      getProxy()
+    }
+
+    // console.log(proxy?.$filter.foo())
+    onMounted(() => {
+      getProxy()
+      // console.log(proxy?.$filter)
+      //   const internalInstance = getCurrentInstance()
+      //   const proxy = internalInstance?.appContext.config.globalProperties
+      //   console.log(proxy?.$filter.bar())
+      //   // console.log(proxy?.$filter)
+      //   // proxy?.$filter.foo().get('/get')
+      //   //   .then(function (response) {
+      //   //     // 处理成功情况
+      //   //     console.log(response);
+      //   //   })
+      //   //   .catch(function (error) {
+      //   //     // 处理错误情况
+      //   //     console.log(error);
+      //   //   })
+      //   //   .then(function () {
+      //   //     // 总是会执行
+      // });
+
+    });
     const name = ref('小明')
     const age = ref(18)
     function plusOne() {
       age.value++ //想改变值或获取值 必须.value
     }
     return { //必须返回 模板中才能使用
-      name, age, plusOne,
+      name, age, plusOne,save,getProxy
     }
 
   },
@@ -88,49 +103,49 @@ export default {
     //   });
   },
   methods: {
-    getProxy() {
+    // getProxy() {
 
-      const globalProperties = useGetGlobalProperties()
-      // console.log(globalProperties)
-      return globalProperties
-      // console.log(instance)
-      // const internalInstance = getCurrentInstance()
-      // const proxy = internalInstance?.appContext.config.globalProperties
-      // // return console.log(proxy?.$filter.bar())
-      // return proxy
-    },
-    save() {
-      // this.getProxy()
-      // console.log(this.myrssd)
-      // console.log(this.getProxy().$ssd.create()
-      //   .then(function (response) {
-      //     // 处理成功情况
-      //     console.log(response);
-      //   })
-      // )
-      // const internalInstance = getCurrentInstance()
-      // const proxy = internalInstance?.appContext.config.globalProperties
-      // // console.log(proxy?.$filter)
-      // proxy?.$filter.foo().get('/get')
-      //   .then(function (response) {
-      //     // 处理成功情况
-      //     console.log(response);
-      //   })
-      //   .catch(function (error) {
-      //     // 处理错误情况
-      //     console.log(error);
-      //   })
-      //   .then(function () {
-      //     // 总是会执行
-      //   });
-      // this.$http.post('/ca', this.model)
-      //   .then(function (response) {
-      //     console.log(response);
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
-    }
+    //   const globalProperties = useGetGlobalProperties()
+    //   return globalProperties
+    // console.log(globalProperties)
+    // console.log(instance)
+    // const internalInstance = getCurrentInstance()
+    // const proxy = internalInstance?.appContext.config.globalProperties
+    // // return console.log(proxy?.$filter.bar())
+    // return proxy
+    // },
+    // save() {
+    // this.getProxy()
+    // console.log(this.myrssd)
+    // console.log(this.getProxy().$ssd.create()
+    //   .then(function (response) {
+    //     // 处理成功情况
+    //     console.log(response);
+    //   })
+    // )
+    // const internalInstance = getCurrentInstance()
+    // const proxy = internalInstance?.appContext.config.globalProperties
+    // // console.log(proxy?.$filter)
+    // proxy?.$filter.foo().get('/get')
+    //   .then(function (response) {
+    //     // 处理成功情况
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     // 处理错误情况
+    //     console.log(error);
+    //   })
+    //   .then(function () {
+    //     // 总是会执行
+    //   });
+    // this.$http.post('/ca', this.model)
+    //   .then(function (response) {
+    //     console.log(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+    // }
   }
 }
 </script>
