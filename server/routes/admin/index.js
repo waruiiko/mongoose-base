@@ -3,7 +3,8 @@ module.exports = app => {
     const router = express.Router();
     const HotSpot = require('../../model/HotSpot')
     router.post('/api/create', async (req, res) => {
-        const model = await HotSpot.create(req.body)
+        console.log('fine'+req)
+        const model = await HotSpot.create(req.query)
         res.send(model)
     })
     router.get('/api', async (req, res) => {
@@ -19,13 +20,13 @@ module.exports = app => {
     })
     //add
     router.get('/api/create', async (req, res) => {
-        const query = await HotSpot.create(req.body)
-        console.log(req.body)
+        console.log('getCreate'+req.query)
+        const raw = await HotSpot.create(req.query)
         // console.log(res)
         res.send({
             status: 200,
             msg: 'get',
-            data: query
+            data: raw
         })
     });
     //find

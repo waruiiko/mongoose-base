@@ -7,14 +7,17 @@ const api = {
     find(data) {
         return service.get(`/find`, { params: data })
     },
+    create(data) {
+        return service.get(`/create`, { params: data })
+    },
 
     // post方法
     getLogin(params) {
         return service.post(`${base}/login`, { params: params })
     },
-    create(params) {
-        return service.get(`/create`, { params: params })
-    },
+    // create(data) {
+    //     return service.post(`/create`, { params: data })
+    // },
     // get方法
     getUsersList(params) {
         return service.get(`${base}/users`, { params: params })

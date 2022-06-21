@@ -16,6 +16,7 @@
       <button type="submit" class="btn btn-primary" @click.prevent="save">Save</button>
       <button type="submit" class="btn btn-primary" @click.prevent="getProxy">getProxy</button>
       <button type="submit" class="btn btn-primary" @click.prevent="getAPI">getAPI</button>
+      <button type="submit" class="btn btn-primary" @click.prevent="create">create</button>
     </div>
   </div>
 </template>
@@ -113,6 +114,26 @@ export default {
       this.$api.find(data)
         .then(function (response) {
           // 处理成功情况
+          console.log(response);
+        })
+        .catch(function (error) {
+          // 处理错误情况
+          console.log(error);
+        })
+        .then(function () {
+          // 总是会执行
+        });
+      // console.log(this.$api);
+      // console.log(this.$filter);
+    },
+    create() {
+      let data = {
+        'title':this.title
+      }
+      this.$api.create(data)
+        .then(function (response) {
+          // 处理成功情况
+          console.log(data);
           console.log(response);
         })
         .catch(function (error) {

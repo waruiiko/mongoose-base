@@ -13,6 +13,7 @@ const hotSpotSchema = new Schema({
     },
     title:{
         type:String,
+        // required:true,
     }
 });
 
