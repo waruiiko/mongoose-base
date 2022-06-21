@@ -110,7 +110,7 @@ export default {
       let data = {
         'title':this.title
       }
-      this.$api.create('/create', {params:data})
+      this.$api.find(data)
         .then(function (response) {
           // 处理成功情况
           console.log(response);

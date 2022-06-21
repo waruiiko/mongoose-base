@@ -4,11 +4,10 @@ const api = {
     get(params) {
         return service.get(`/`, { params: params })
     },
-    find(params) {
+    async find(params) {
         return service.get(`/find`, { params: params })
-        // const raw = await HotSpot.find({ title: 'hello create!!' })
-        // res.send(raw)
     },
+
     // post方法
     getLogin(params) {
         return service.post(`${base}/login`, { params: params })

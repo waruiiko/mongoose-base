@@ -8,6 +8,14 @@ app.use(express.json())
 const cors = require('cors')
 app.use(cors())
 
+var bodyParser = require('body-parser');
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 require('./routes/admin')(app);
 require('./plugins/db')(app);
 
