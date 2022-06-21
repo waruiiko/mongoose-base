@@ -4,8 +4,8 @@ const api = {
     get(params) {
         return service.get(`/`, { params: params })
     },
-    async find(params) {
-        return service.get(`/find`, { params: params })
+    find(data) {
+        return service.get(`/find`, { params: data })
     },
 
     // post方法

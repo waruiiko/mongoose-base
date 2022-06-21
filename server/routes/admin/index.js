@@ -31,8 +31,9 @@ module.exports = app => {
     //find
     router.get('/api/find', async (req, res) => {
         // const raw = await HotSpot.find({ title: 'hello create!!' })
-        const raw = await HotSpot.find({ title: 'xiaomingn' })
+        const raw = await HotSpot.find(req.query)
         res.send(raw)
+        console.log(req.query)
     });
     app.use('/', router)
 }
