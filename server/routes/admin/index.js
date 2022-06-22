@@ -3,7 +3,7 @@ module.exports = app => {
     const router = express.Router();
     const HotSpot = require('../../model/HotSpot')
     router.post('/api/create', async (req, res) => {
-        console.log('fine'+req)
+        console.log('fine'+req.query)
         const model = await HotSpot.create(req.query)
         res.send(model)
     })

@@ -8,7 +8,7 @@ const api = {
         return service.get(`/find`, { params: data })
     },
     create(data) {
-        return service.get(`/create`, { params: data })
+        return service.post(`/create`, { params: data })
     },
 
     // post方法
