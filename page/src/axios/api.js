@@ -1,4 +1,6 @@
 import service from './baseURL' // 引入刚刚创建的域名文件
+// var qs = require('qs');
+// var assert = require('assert');
 const base = '/api';// 解决跨域问题
 const api = {
     get(params) {
@@ -8,8 +10,11 @@ const api = {
         return service.get(`/find`, { params: data })
     },
     create(data) {
-        return service.post(`/create`, { params: data })
+        return service.get(`/create`, { params: data })
     },
+    // postCreate(data) {
+    //     return service.post(`/create`, { params: qs.stringify(data) })
+    // },
 
     // post方法
     getLogin(params) {

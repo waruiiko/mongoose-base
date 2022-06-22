@@ -2,11 +2,11 @@ module.exports = app => {
     const express = require('express');
     const router = express.Router();
     const HotSpot = require('../../model/HotSpot')
-    router.post('/api/create', async (req, res) => {
-        console.log('fine'+req.query)
-        const model = await HotSpot.create(req.query)
-        res.send(model)
-    })
+    // router.post('/api/create', async (req, res) => {
+    //     console.log('fine'+req)
+    //     const model = await HotSpot.create(req.query)
+    //     res.send(model)
+    // })
     router.get('/api', async (req, res) => {
         res.send('Hello World!')
     })
@@ -19,10 +19,20 @@ module.exports = app => {
         })
     })
     //add
+    router.post('/api/create', async (req, res) => {
+        console.log('getCreate'+req)
+        const raw = await HotSpot.create(req.body)
+        console.log('getCreate raw'+raw)
+        res.send({
+            status: 200,
+            msg: 'get',
+            data: raw
+        })
+    });
     router.get('/api/create', async (req, res) => {
-        console.log('getCreate'+req.query)
+        // console.log('fine'+req.query)
         const raw = await HotSpot.create(req.query)
-        // console.log(res)
+        console.log('raw'+raw)
         res.send({
             status: 200,
             msg: 'get',

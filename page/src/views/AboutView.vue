@@ -17,12 +17,14 @@
       <button type="submit" class="btn btn-primary" @click.prevent="getProxy">getProxy</button>
       <button type="submit" class="btn btn-primary" @click.prevent="getAPI">getAPI</button>
       <button type="submit" class="btn btn-primary" @click.prevent="create">create</button>
+      <button type="submit" class="btn btn-primary" @click.prevent="postCreate">postCreate</button>
     </div>
   </div>
 </template>
 
 <script>
 import { ref, getCurrentInstance, onMounted } from 'vue'
+import axios from 'axios'
 // import useGetGlobalProperties from '../hooks/useGlobal'
 export default {
   data() {
@@ -143,7 +145,27 @@ export default {
         .then(function () {
           // 总是会执行
         });
-      // console.log(this.$api);
+      console.log(this.$api);
+      // console.log(this.$filter);
+    },
+    postCreate() {
+      let data = {
+        'title':this.title
+      }
+      axios.post('http://127.0.0.1:3000/api/create',data)
+        .then(function (response) {
+          // 处理成功情况
+          console.log(data);
+          console.log(response);
+        })
+        .catch(function (error) {
+          // 处理错误情况
+          console.log(error);
+        })
+        .then(function () {
+          // 总是会执行
+        });
+      console.log(this.$api);
       // console.log(this.$filter);
     }
     // getProxy() {
