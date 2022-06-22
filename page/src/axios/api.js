@@ -9,12 +9,17 @@ const api = {
     find(data) {
         return service.get(`/find`, { params: data })
     },
+
+    //get方法的第二个参数为{ params: data }
     create(data) {
         return service.get(`/create`, { params: data })
     },
-    // postCreate(data) {
-    //     return service.post(`/create`, { params: qs.stringify(data) })
-    // },
+
+    //post方法的第二个参数直接为data
+    postCreate(data) {
+        console.log(data)
+        return service.post(`create`, data)
+    },
 
     // post方法
     getLogin(params) {

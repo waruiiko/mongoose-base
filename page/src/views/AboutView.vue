@@ -132,7 +132,7 @@ export default {
       let data = {
         'title':this.title
       }
-      this.$api.create(data)
+      this.$api.postCreate(data)
         .then(function (response) {
           // 处理成功情况
           console.log(data);
