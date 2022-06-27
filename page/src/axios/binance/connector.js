@@ -1,13 +1,9 @@
-// import { apiKey,apiSecret } from './key'
-// const { key } = require('./key');
-// const { apiSecret } = require('./apiSecret');
+const { myapiKey,myapiSecret } = require('./key');
 const { Spot } = require('@binance/connector')
 
-const apiKey = '';
-const apiSecret = '';
+const apiKey = myapiKey;
+const apiSecret = myapiSecret;
 console.log(apiKey, apiSecret)
-// const apiKey = ''
-// const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
 // Get account information
