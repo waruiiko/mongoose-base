@@ -3,12 +3,11 @@ const { Spot } = require('@binance/connector')
 
 const apiKey = myapiKey;
 const apiSecret = myapiSecret;
-console.log(apiKey, apiSecret)
 const client = new Spot(apiKey, apiSecret)
 
 // Get account information
 client.account().then(response => client.logger.log(response.data))
-
+console.log("=========================================")
 // Place a new order
 client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
   price: '350',
